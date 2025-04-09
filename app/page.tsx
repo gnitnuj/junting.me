@@ -3,30 +3,31 @@ import Image from "next/image";
 import { Github, Twitter, Instagram, Linkedin, Mail } from "lucide-react";
 import LinkCard from "./components/link-card";
 import SocialIcon from "./components/social-icon";
+import PropertyCarousel from "./components/property-carousel";
 
 export default function Home() {
   // Sample property data - replace with your actual properties
   const properties = [
     {
       id: 1,
-      name: "Beachfront Villa",
-      image: "/placeholder.svg?height=400&width=600",
-      location: "Malibu, California",
-      url: "https://airbnb.com/property1",
+      name: "West Village Apartment",
+      image: "/ny-carousel.jpeg?height=400&width=600",
+      location: "West Village, New York",
+      url: "https://airbnb.com/h/wvnyc1br",
     },
     {
       id: 2,
-      name: "Mountain Cabin",
-      image: "/placeholder.svg?height=400&width=600",
-      location: "Aspen, Colorado",
-      url: "https://airbnb.com/property2",
+      name: "Seattle Home",
+      image: "/sea-carousel.jpeg?height=400&width=600",
+      location: "Seattle, Washington",
+      url: "https://airbnb.com/h/valentineplace",
     },
     {
       id: 3,
-      name: "Downtown Loft",
-      image: "/placeholder.svg?height=400&width=600",
-      location: "New York City, NY",
-      url: "https://airbnb.com/property3",
+      name: "Los Angeles Tiny Home",
+      image: "/la-carousel.avif?height=400&width=600",
+      location: "Los Angeles, California",
+      url: "https://airbnb.com/h/leimert-park-guesthouse",
     },
   ];
 
@@ -47,9 +48,6 @@ export default function Home() {
             Web Developer & Designer | Creating digital experiences
           </p>
         </div>
-
-        {/* Property Carousel */}
-        {/* <PropertyCarousel properties={properties} /> */}
 
         <div className="space-y-4">
           <LinkCard
@@ -73,6 +71,8 @@ export default function Home() {
             href="https://calendly.com"
           />
         </div>
+
+        <PropertyCarousel properties={properties} />
 
         <div className="flex justify-center space-x-4 mt-8">
           <SocialIcon href="https://twitter.com" icon={<Twitter size={20} />} />
