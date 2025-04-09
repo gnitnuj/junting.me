@@ -1,103 +1,127 @@
+import type React from "react";
 import Image from "next/image";
+import { Github, Twitter, Instagram, Linkedin, Mail } from "lucide-react";
+import Link from "next/link";
+// import PropertyCarousel from "@/components/property-carousel";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  // Sample property data - replace with your actual properties
+  const properties = [
+    {
+      id: 1,
+      name: "Beachfront Villa",
+      image: "/placeholder.svg?height=400&width=600",
+      location: "Malibu, California",
+      url: "https://airbnb.com/property1",
+    },
+    {
+      id: 2,
+      name: "Mountain Cabin",
+      image: "/placeholder.svg?height=400&width=600",
+      location: "Aspen, Colorado",
+      url: "https://airbnb.com/property2",
+    },
+    {
+      id: 3,
+      name: "Downtown Loft",
+      image: "/placeholder.svg?height=400&width=600",
+      location: "New York City, NY",
+      url: "https://airbnb.com/property3",
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-between p-4 bg-purple-50">
+      <div className="max-w-md w-full mx-auto py-16">
+        <div className="flex flex-col items-center mb-8">
+          <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4 ring-4 ring-purple-500 ring-offset-2">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/placeholder.svg?height=200&width=200"
+              alt="Profile"
+              fill
+              className="object-cover"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+          <h1 className="text-2xl font-bold text-gray-800">Your Name</h1>
+          <p className="text-gray-600 text-center mt-2">
+            Web Developer & Designer | Creating digital experiences
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+
+        {/* Property Carousel */}
+        {/* <PropertyCarousel properties={properties} /> */}
+
+        <div className="space-y-4">
+          <LinkCard
+            title="My Portfolio"
+            description="Check out my latest projects and work"
+            href="https://example.com/portfolio"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+          <LinkCard
+            title="My Blog"
+            description="Read my thoughts on design and development"
+            href="https://example.com/blog"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+          <LinkCard
+            title="Free Resources"
+            description="Download free design resources and code snippets"
+            href="https://example.com/resources"
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <LinkCard
+            title="Book a Call"
+            description="Let's chat about your next project"
+            href="https://calendly.com"
+          />
+        </div>
+
+        <div className="flex justify-center space-x-4 mt-8">
+          <SocialIcon href="https://twitter.com" icon={<Twitter size={20} />} />
+          <SocialIcon
+            href="https://instagram.com"
+            icon={<Instagram size={20} />}
+          />
+          <SocialIcon href="https://github.com" icon={<Github size={20} />} />
+          <SocialIcon
+            href="https://linkedin.com"
+            icon={<Linkedin size={20} />}
+          />
+          <SocialIcon
+            href="mailto:hello@example.com"
+            icon={<Mail size={20} />}
+          />
+        </div>
+      </div>
+    </main>
+  );
+}
+
+function LinkCard({
+  title,
+  description,
+  href,
+}: {
+  title: string;
+  description: string;
+  href: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="block p-5 bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-purple-100 hover:scale-[1.02]"
+    >
+      <h2 className="font-semibold text-gray-800">{title}</h2>
+      <p className="text-gray-600 text-sm mt-1">{description}</p>
+    </Link>
+  );
+}
+
+function SocialIcon({ href, icon }: { href: string; icon: React.ReactNode }) {
+  return (
+    <Link
+      href={href}
+      className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-sm hover:shadow-md transition-shadow duration-300 text-purple-600 hover:text-purple-800"
+    >
+      {icon}
+    </Link>
   );
 }
