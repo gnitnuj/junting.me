@@ -38,7 +38,9 @@ export default function PropertyCarousel({
 
   return (
     <div className="relative w-full mb-8">
-      <h2 className="text-xl font-semibold mb-4 text-center">Stay</h2>
+      <h2 className="text-2xl font-bold text-gray-800 text-center py-4">
+        Stay
+      </h2>
 
       <div className="relative h-64 overflow-hidden rounded-3xl">
         {properties.map((property, index) => (

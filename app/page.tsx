@@ -1,12 +1,11 @@
 import type React from "react";
 import Image from "next/image";
-import { Github, Twitter, Instagram, Linkedin, Mail } from "lucide-react";
+import { Github, Instagram, Linkedin, Mail } from "lucide-react";
 import LinkCard from "./components/link-card";
 import SocialIcon from "./components/social-icon";
 import PropertyCarousel from "./components/property-carousel";
 
 export default function Home() {
-  // Sample property data - replace with your actual properties
   const properties = [
     {
       id: 1,
@@ -37,59 +36,56 @@ export default function Home() {
         <div className="flex flex-col items-center mb-8">
           <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4 ring-4 ring-purple-500 ring-offset-2">
             <Image
-              src="/placeholder.svg?height=200&width=200"
+              src="/JunFabio.jpg?height=200&width=200"
               alt="Profile"
               fill
               className="object-cover"
             />
           </div>
-          <h1 className="text-2xl font-bold text-gray-800">Your Name</h1>
+          <h1 className="text-2xl font-bold text-gray-800">Junting</h1>
           <p className="text-gray-600 text-center mt-2">
-            Web Developer & Designer | Creating digital experiences
+            Engineer | Aspiring Solopreneur
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="flex justify-center space-x-4 py-8">
+          <SocialIcon
+            href="https://github.com/gnitnuj"
+            icon={<Github size={20} />}
+          />
+          <SocialIcon
+            href="https://linkedin.com/in/junting"
+            icon={<Linkedin size={20} />}
+          />
+          <SocialIcon
+            href="mailto:junting.lu@gmail.com"
+            icon={<Mail size={20} />}
+          />
+          <SocialIcon
+            href="https://instagram.com/whatsajunting"
+            icon={<Instagram size={20} />}
+          />
+        </div>
+
+        <div className="space-y-4  py-8">
           <LinkCard
-            title="My Portfolio"
-            description="Check out my latest projects and work"
-            href="https://example.com/portfolio"
+            title="About"
+            description="Whatsajunting?"
+            href="https://whatsajunt.ing/about"
           />
           <LinkCard
-            title="My Blog"
-            description="Read my thoughts on design and development"
-            href="https://example.com/blog"
+            title="Chat"
+            description="Get on my calendar"
+            href="https://calendar.app.google/enxs2Q7YpHACnBBAA"
           />
           <LinkCard
-            title="Free Resources"
-            description="Download free design resources and code snippets"
-            href="https://example.com/resources"
-          />
-          <LinkCard
-            title="Book a Call"
-            description="Let's chat about your next project"
-            href="https://calendly.com"
+            title="Build-my-own-x"
+            description="My build-your-own -x repo"
+            href="https://github.com/gnitnuj/build-my-own-x/"
           />
         </div>
 
         <PropertyCarousel properties={properties} />
-
-        <div className="flex justify-center space-x-4 mt-8">
-          <SocialIcon href="https://twitter.com" icon={<Twitter size={20} />} />
-          <SocialIcon
-            href="https://instagram.com"
-            icon={<Instagram size={20} />}
-          />
-          <SocialIcon href="https://github.com" icon={<Github size={20} />} />
-          <SocialIcon
-            href="https://linkedin.com"
-            icon={<Linkedin size={20} />}
-          />
-          <SocialIcon
-            href="mailto:hello@example.com"
-            icon={<Mail size={20} />}
-          />
-        </div>
       </div>
     </main>
   );
