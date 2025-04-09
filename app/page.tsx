@@ -2,7 +2,7 @@ import type React from "react";
 import Image from "next/image";
 import { Github, Twitter, Instagram, Linkedin, Mail } from "lucide-react";
 import LinkCard from "./components/link-card";
-import Link from "next/link";
+import SocialIcon from "./components/social-icon";
 
 export default function Home() {
   // Sample property data - replace with your actual properties
@@ -92,16 +92,5 @@ export default function Home() {
         </div>
       </div>
     </main>
-  );
-}
-
-function SocialIcon({ href, icon }: { href: string; icon: React.ReactNode }) {
-  return (
-    <Link
-      href={href}
-      className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-sm hover:shadow-md transition-shadow duration-300 text-purple-600 hover:text-purple-800"
-    >
-      {icon}
-    </Link>
   );
 }
