@@ -2,6 +2,11 @@
 
 junting.me is the the domain where i'm buiding my own personal "linktree".
 
+### Todo
+- [ ] Lucid is depracating icons, replace with simple icons
+- [ ] Add themeing so color palette is more easily customizable
+- [ ] LinkCard component is a bit meh. Needs to be jazzed up a bit :)
+
 ## Getting Started
 
 First, run the development server:
