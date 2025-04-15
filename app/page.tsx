@@ -79,7 +79,7 @@ export default function Home() {
             href="https://calendar.app.google/enxs2Q7YpHACnBBAA"
           />
           <LinkCard
-            title="Build-my-own-x"
+            title="Code"
             description="My build-your-own -x repo"
             href="https://github.com/gnitnuj/build-my-own-x/"
           />
