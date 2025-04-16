@@ -44,7 +44,7 @@ export default function Home() {
           </div>
           <h1 className="text-2xl font-bold text-gray-800">Junting</h1>
           <p className="text-gray-600 text-center mt-2">
-            Engineer | Aspiring Solopreneur
+            Engineering | Management | Real Estate
           </p>
         </div>
 
@@ -70,7 +70,7 @@ export default function Home() {
         <div className="space-y-4  py-8">
           <LinkCard
             title="About"
-            description="Whatsajunting?"
+            description="What's a Junting?"
             href="https://whatsajunt.ing/about"
           />
           <LinkCard
