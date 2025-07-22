@@ -34,7 +34,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-4" style={{background: 'linear-gradient(135deg, #fff8e7 0%, #f4f1e8 100%)'}}>
       <div className="max-w-md w-full mx-auto py-16">
         <div className="flex flex-col items-center mb-8">
-          <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4 ring-4 ring-offset-2" style={{ringColor: '#c17767'}}>
+          <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4" style={{boxShadow: '0 0 0 4px #c17767, 0 0 0 8px #f4f1e8'}}>
             <Image
               src="/JunFabio.jpg?height=200&width=200"
               alt="Profile"
