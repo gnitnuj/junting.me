@@ -31,10 +31,10 @@ export default function Home() {
   ];
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-4 bg-purple-50">
+    <main className="flex min-h-screen flex-col items-center justify-between p-4" style={{background: 'linear-gradient(135deg, #fff8e7 0%, #f4f1e8 100%)'}}>
       <div className="max-w-md w-full mx-auto py-16">
         <div className="flex flex-col items-center mb-8">
-          <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4 ring-4 ring-purple-500 ring-offset-2">
+          <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4 ring-4 ring-offset-2" style={{ringColor: '#c17767'}}>
             <Image
               src="/JunFabio.jpg?height=200&width=200"
               alt="Profile"
@@ -42,8 +42,8 @@ export default function Home() {
               className="object-cover"
             />
           </div>
-          <h1 className="text-2xl font-bold text-gray-800">Junting</h1>
-          <p className="text-gray-600 text-center mt-2">
+          <h1 className="text-2xl font-bold" style={{color: '#2d1810'}}>Junting</h1>
+          <p className="text-center mt-2" style={{color: '#8b4513'}}>
             Engineering | Management | Real Estate
           </p>
         </div>

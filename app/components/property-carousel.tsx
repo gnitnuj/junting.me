@@ -38,7 +38,7 @@ export default function PropertyCarousel({
 
   return (
     <div className="relative w-full mb-8">
-      <h2 className="text-2xl font-bold text-gray-800 text-center py-4">
+      <h2 className="text-2xl font-bold text-center py-4" style={{ color: '#2d1810' }}>
         Stay
       </h2>
 
@@ -47,11 +47,10 @@ export default function PropertyCarousel({
           <Link
             key={property.id}
             href={property.url}
-            className={`absolute w-full h-full transition-all duration-500 ease-in-out transform ${
-              index === currentIndex
-                ? "translate-x-0 opacity-100"
-                : "translate-x-full opacity-0"
-            }`}
+            className={`absolute w-full h-full transition-all duration-500 ease-in-out transform ${index === currentIndex
+              ? "translate-x-0 opacity-100"
+              : "translate-x-full opacity-0"
+              }`}
           >
             <div className="relative w-full h-full">
               <Image
@@ -72,7 +71,11 @@ export default function PropertyCarousel({
       {/* Navigation Buttons */}
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-2 -translate-y-1/2 bg-white bg-opacity-80 rounded-full p-2 shadow-md hover:bg-opacity-100 transition-all"
+        className="absolute top-1/2 left-2 -translate-y-1/2 rounded-full p-2 shadow-md transition-all"
+        style={{
+          background: 'linear-gradient(135deg, #d4a574 0%, #c17767 100%)',
+          color: '#fff8e7'
+        }}
         aria-label="Previous property"
       >
         <ChevronLeft size={20} />
@@ -80,7 +83,11 @@ export default function PropertyCarousel({
 
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-2 -translate-y-1/2 bg-white bg-opacity-80 rounded-full p-2 shadow-md hover:bg-opacity-100 transition-all"
+        className="absolute top-1/2 right-2 -translate-y-1/2 rounded-full p-2 shadow-md transition-all"
+        style={{
+          background: 'linear-gradient(135deg, #d4a574 0%, #c17767 100%)',
+          color: '#fff8e7'
+        }}
         aria-label="Next property"
       >
         <ChevronRight size={20} />
@@ -92,9 +99,11 @@ export default function PropertyCarousel({
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-2.5 h-2.5 rounded-full transition-all ${
-              index === currentIndex ? "bg-purple-600 w-5" : "bg-purple-300"
-            }`}
+            className="w-2.5 h-2.5 rounded-full transition-all"
+            style={{
+              backgroundColor: index === currentIndex ? '#c17767' : '#9caf88',
+              width: index === currentIndex ? '20px' : '10px'
+            }}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}

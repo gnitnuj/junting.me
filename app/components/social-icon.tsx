@@ -10,7 +10,11 @@ export default function SocialIcon({
   return (
     <Link
       href={href}
-      className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-sm hover:shadow-md transition-shadow duration-300 text-purple-600 hover:text-purple-800"
+      className="w-10 h-10 flex items-center justify-center rounded-full shadow-sm hover:shadow-md transition-all duration-300 hover:scale-110"
+      style={{
+        background: 'linear-gradient(135deg, #d4a574 0%, #c17767 100%)',
+        color: '#fff8e7'
+      }}
     >
       {icon}
     </Link>

@@ -1,8 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4f1e8;
+  --foreground: #2d1810;
+  --retro-terracotta: #c17767;
+  --retro-sage: #9caf88;
+  --retro-dusty-rose: #d4a574;
+  --retro-cream: #fff8e7;
+  --retro-brown: #8b4513;
+  --retro-muted-coral: #d4a574;
 }
 
 @theme inline {
@@ -14,8 +20,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #2d1810;
+    --foreground: #f4f1e8;
+    --retro-terracotta: #d4a574;
+    --retro-sage: #a8b89a;
+    --retro-dusty-rose: #e6b887;
+    --retro-cream: #2d1810;
+    --retro-brown: #d2691e;
+    --retro-muted-coral: #e6b887;
   }
 }
 
