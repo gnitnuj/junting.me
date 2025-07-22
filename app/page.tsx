@@ -78,11 +78,6 @@ export default function Home() {
             description="Get on my calendar"
             href="https://calendar.app.google/enxs2Q7YpHACnBBAA"
           />
-          <LinkCard
-            title="Code"
-            description="My build-your-own -x repo"
-            href="https://github.com/gnitnuj/build-my-own-x/"
-          />
         </div>
 
         <PropertyCarousel properties={properties} />
