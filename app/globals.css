@@ -1,38 +1,4 @@
 @import "tailwindcss";
-
-:root {
-  --background: #f4f1e8;
-  --foreground: #2d1810;
-  --retro-terracotta: #c17767;
-  --retro-sage: #9caf88;
-  --retro-dusty-rose: #d4a574;
-  --retro-cream: #fff8e7;
-  --retro-brown: #8b4513;
-  --retro-muted-coral: #d4a574;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #2d1810;
-    --foreground: #f4f1e8;
-    --retro-terracotta: #d4a574;
-    --retro-sage: #a8b89a;
-    --retro-dusty-rose: #e6b887;
-    --retro-cream: #2d1810;
-    --retro-brown: #d2691e;
-    --retro-muted-coral: #e6b887;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+:root { --paper:#f7f4ed; --ink:#24231f; --muted:#6f6a60; --line:#d9d3c8; --accent:#a95743; --accent-pale:#ead5cb; }
+* { box-sizing:border-box; } html, body { margin:0; background:var(--paper); } body { color:var(--ink); font-family:Arial,Helvetica,sans-serif; } a { color:inherit; }
+.site-shell { min-height:100svh; padding:56px 20px 32px; background:radial-gradient(circle at 95% 0%,#efe6d6 0,transparent 27rem),var(--paper); }.page-content { width:min(100%,620px); margin:0 auto; }.intro { text-align:center; }.intro-kicker,.card-eyebrow,.section-kicker { margin:0;color:var(--accent);font-size:.68rem;font-weight:700;letter-spacing:.15em; }.avatar { width:104px;height:104px;overflow:hidden;margin:15px auto 20px;border:1px solid var(--ink);border-radius:50%;box-shadow:6px 6px 0 var(--accent-pale); }h1,h2,h3,p { margin-top:0; }h1,h2,h3 { font-family:Georgia,"Times New Roman",serif;font-weight:500; }h1 { margin-bottom:10px;font-size:clamp(2.55rem,10vw,4rem);letter-spacing:-.055em;line-height:.95; }.intro-copy { max-width:385px;margin:0 auto;color:var(--muted);font-size:1rem;line-height:1.55; }.socials { display:flex;justify-content:center;gap:9px;margin:30px 0 38px; }.social-icon { display:grid;width:39px;height:39px;place-items:center;border:1px solid var(--line);border-radius:50%;background:rgba(255,255,255,.38);transition:background .2s,color .2s,transform .2s; }.social-icon:hover { background:var(--ink);color:var(--paper);transform:translateY(-2px); }.link-section { display:grid;gap:11px; }.link-card { display:flex;align-items:center;justify-content:space-between;min-height:112px;padding:23px 22px;border:1px solid var(--line);background:rgba(255,255,255,.34);text-decoration:none;transition:border-color .2s,transform .2s,background .2s; }.link-card:hover { border-color:var(--accent);background:#fffdf9;transform:translateX(4px); }.link-card h2 { margin:4px 0 2px;font-size:1.4rem; }.card-description { margin:0;color:var(--muted);font-size:.9rem; }.card-arrow { color:var(--accent);transition:transform .2s; }.link-card:hover .card-arrow { transform:translate(3px,-3px); }.stays { margin-top:55px; }.section-heading { display:flex;justify-content:space-between;align-items:end;padding-bottom:15px;border-bottom:1px solid var(--line); }.section-heading h2 { margin:4px 0 0;font-size:2rem;letter-spacing:-.04em; }.section-heading>span { color:var(--muted);font-size:.75rem; }.property-rail { display:grid;grid-auto-flow:column;grid-auto-columns:minmax(235px,78%);gap:14px;overflow-x:auto;padding:18px 2px 9px;scrollbar-width:thin;scroll-snap-type:x mandatory; }.property-card { overflow:hidden;border:1px solid var(--line);background:#fffdf9;text-decoration:none;scroll-snap-align:start;transition:transform .2s,box-shadow .2s; }.property-card:hover { box-shadow:5px 5px 0 var(--accent-pale);transform:translate(-2px,-2px); }.property-image { height:200px;overflow:hidden; }.property-image img { transition:transform .4s ease; }.property-card:hover img { transform:scale(1.04); }.property-copy { padding:14px 15px 16px; }.property-copy p { margin-bottom:6px;color:var(--muted);font-size:.72rem; }.property-copy div { display:flex;align-items:center;justify-content:space-between;gap:12px; }.property-copy h3 { margin:0;font-size:1.05rem; }footer { margin-top:54px;color:var(--muted);font-size:.72rem;letter-spacing:.05em;text-align:center; }@media (min-width:640px) { .site-shell { padding-top:80px; }.property-rail { grid-auto-columns:minmax(250px,52%); } }

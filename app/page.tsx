@@ -1,4 +1,3 @@
-import type React from "react";
 import Image from "next/image";
 import { Github, Instagram, Linkedin, Mail } from "lucide-react";
 import LinkCard from "./components/link-card";
@@ -7,80 +6,37 @@ import PropertyCarousel from "./components/property-carousel";
 
 export default function Home() {
   const properties = [
-    {
-      id: 1,
-      name: "West Village Apartment",
-      image: "/ny-carousel.jpeg?height=400&width=600",
-      location: "West Village, New York",
-      url: "https://airbnb.com/h/wvnyc1br",
-    },
-    {
-      id: 2,
-      name: "Seattle Home",
-      image: "/sea-carousel.jpeg?height=400&width=600",
-      location: "Seattle, Washington",
-      url: "https://airbnb.com/h/valentineplace",
-    },
-    {
-      id: 3,
-      name: "Los Angeles Tiny Home",
-      image: "/la-carousel.avif?height=400&width=600",
-      location: "Los Angeles, California",
-      url: "https://airbnb.com/h/leimert-park-guesthouse",
-    },
+    { id: 1, name: "West Village Apartment", image: "/ny-carousel.jpeg", location: "West Village, New York", url: "https://airbnb.com/h/wvnyc1br" },
+    { id: 2, name: "Seattle Home", image: "/sea-carousel.jpeg", location: "Seattle, Washington", url: "https://airbnb.com/h/valentineplace" },
+    { id: 3, name: "Los Angeles Tiny Home", image: "/la-carousel.avif", location: "Los Angeles, California", url: "https://airbnb.com/h/leimert-park-guesthouse" },
   ];
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-4" style={{background: 'linear-gradient(135deg, #fff8e7 0%, #f4f1e8 100%)'}}>
-      <div className="max-w-md w-full mx-auto py-16">
-        <div className="flex flex-col items-center mb-8">
-          <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4" style={{boxShadow: '0 0 0 4px #c17767, 0 0 0 8px #f4f1e8'}}>
-            <Image
-              src="/JunFabio.jpg?height=200&width=200"
-              alt="Profile"
-              fill
-              className="object-cover"
-            />
+    <main className="site-shell">
+      <div className="page-content">
+        <header className="intro">
+          <p className="intro-kicker">HELLO, I&apos;M</p>
+          <div className="relative avatar">
+            <Image src="/JunFabio.jpg" alt="Portrait of Junting" fill className="object-cover" priority />
           </div>
-          <h1 className="text-2xl font-bold" style={{color: '#2d1810'}}>Junting</h1>
-          <p className="text-center mt-2" style={{color: '#8b4513'}}>
-            Engineering | Management | Real Estate
-          </p>
-        </div>
+          <h1>Junting Lu</h1>
+          <p className="intro-copy">Building thoughtful things across engineering, management, and real estate.</p>
+        </header>
 
-        <div className="flex justify-center space-x-4 py-8">
-          <SocialIcon
-            href="https://github.com/gnitnuj"
-            icon={<Github size={20} />}
-          />
-          <SocialIcon
-            href="https://linkedin.com/in/junting"
-            icon={<Linkedin size={20} />}
-          />
-          <SocialIcon
-            href="mailto:junting.lu@gmail.com"
-            icon={<Mail size={20} />}
-          />
-          <SocialIcon
-            href="https://instagram.com/whatsajunting"
-            icon={<Instagram size={20} />}
-          />
-        </div>
+        <nav className="socials" aria-label="Social links">
+          <SocialIcon href="https://github.com/gnitnuj" icon={<Github size={20} />} />
+          <SocialIcon href="https://linkedin.com/in/junting" icon={<Linkedin size={20} />} />
+          <SocialIcon href="mailto:junting.lu@gmail.com" icon={<Mail size={20} />} />
+          <SocialIcon href="https://instagram.com/whatsajunting" icon={<Instagram size={20} />} />
+        </nav>
 
-        <div className="space-y-4  py-8">
-          <LinkCard
-            title="About"
-            description="What's a Junting?"
-            href="https://whatsajunt.ing/about"
-          />
-          <LinkCard
-            title="Chat"
-            description="Get on my calendar"
-            href="https://calendar.app.google/enxs2Q7YpHACnBBAA"
-          />
-        </div>
+        <section className="link-section" aria-label="Get in touch">
+          <LinkCard eyebrow="A LITTLE MORE" title="About me" description="What&apos;s a Junting?" href="https://whatsajunt.ing/about" />
+          <LinkCard eyebrow="LET&apos;S CONNECT" title="Book a chat" description="Get on my calendar" href="https://calendar.app.google/enxs2Q7YpHACnBBAA" />
+        </section>
 
         <PropertyCarousel properties={properties} />
+        <footer>Made with curiosity · Seattle, WA</footer>
       </div>
     </main>
   );

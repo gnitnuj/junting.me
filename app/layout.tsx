@@ -6,8 +6,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "All Junting's Links",
-  description: "A collection of important links and resources",
+  title: "Junting Lu — Engineering, Management & Real Estate",
+  description: "The home of Junting Lu's work, links, and places to stay.",
 };
 
 export default function RootLayout({
