@@ -205,3 +205,75 @@ footer {
     transform: none;
   }
 }
+
+/* Professional destinations keep the same compact tap-target rhythm. */
+.professional-links { margin-top: var(--space-lg); }
+.professional-list { display: grid; gap: var(--space-sm); }
+.professional-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-height: 68px;
+  padding: var(--space-sm) var(--space-md);
+  border: var(--rule-thin) solid var(--line);
+  border-radius: var(--radius-note-alt);
+  background: var(--surface);
+  text-decoration: none;
+  transition: transform var(--dur-short) var(--ease-out);
+}
+.site-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: var(--radius-note);
+}
+.site-icon--sage { background: var(--accent-pale); color: var(--accent); }
+.site-icon--lilac { background: var(--color-lilac); color: var(--color-lilac-ink); }
+.site-copy { min-width: 0; flex: 1; }
+.site-copy h3 {
+  margin: 0 0 var(--space-xs);
+  font-family: var(--font-body);
+  font-size: var(--text-section);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+}
+.site-copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--text-small);
+  line-height: 1.35;
+}
+.professional-card:hover { background: var(--color-hover); }
+.professional-card:active { background: var(--accent-pale); transform: translateY(2px); }
+.professional-card:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  .professional-card, .professional-card:active { transition: none; transform: none; }
+}
+
+/* Give each destination the same pastel note treatment. */
+.professional-card {
+  --note-face: var(--color-lilac);
+  --note-ink: var(--color-lilac-ink);
+  background: var(--note-face);
+  border-radius: var(--radius-note);
+  box-shadow: var(--shadow-note);
+}
+.professional-card--sage {
+  --note-face: var(--accent-pale);
+  --note-ink: var(--accent);
+  border-radius: var(--radius-note-alt);
+}
+.professional-card:hover, .professional-card:active { background: var(--note-face); }
+.professional-card .site-icon { background: var(--surface); }
+.professional-card .site-copy h3 { font-size: var(--text-link); }
+.professional-card .card-arrow {
+  box-sizing: content-box;
+  padding: var(--space-xs);
+  color: var(--note-ink);
+  border: var(--rule-thin) solid currentColor;
+  border-radius: 50%;
+}
