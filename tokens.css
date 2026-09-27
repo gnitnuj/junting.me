@@ -1,0 +1,51 @@
+/* Personal link hub · whimsical stationery, compact type, clear tap targets. */
+:root {
+  --color-paper: oklch(97% 0.018 85);
+  --color-surface: oklch(99% 0.008 85);
+  --color-hover: oklch(94% 0.025 85);
+  --color-ink: oklch(27% 0.035 155);
+  --color-muted: oklch(43% 0.025 155);
+  --color-rule: oklch(66% 0.035 155);
+  --color-accent: oklch(40% 0.085 155);
+  --color-accent-pale: oklch(92% 0.04 150);
+  --color-butter: oklch(94% 0.085 95);
+  --color-lilac: oklch(94% 0.035 305);
+  --color-lilac-ink: oklch(38% 0.085 305);
+  --color-sticker-edge: oklch(80% 0.04 155);
+  --color-accent-ink: var(--color-paper);
+  --color-focus: var(--color-accent);
+  --font-display: var(--font-shantell), sans-serif;
+  --font-body: var(--font-geist), sans-serif;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --text-small: 0.8125rem;
+  --text-body: 1rem;
+  --text-link: 1rem;
+  --text-section: 0.875rem;
+  --text-display: 1.5rem;
+  --rule-thin: 1px;
+  --rule-heavy: 2px;
+  --radius-photo: 0.5rem;
+  --radius-note: 18px 22px 18px 14px;
+  --radius-note-alt: 22px 16px 20px 18px;
+  --radius-portrait: 44% 56% 48% 52% / 50% 44% 56% 50%;
+  --shadow-note: 0 3px 0 var(--color-sticker-edge);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-short: 150ms;
+
+  /* Preserve the existing components' palette names. */
+  --paper: var(--color-paper);
+  --ink: var(--color-ink);
+  --muted: var(--color-muted);
+  --line: var(--color-rule);
+  --accent: var(--color-accent);
+  --accent-pale: var(--color-accent-pale);
+  --surface: var(--color-surface);
+  --surface-raised: var(--color-paper);
+  --focus: var(--color-focus);
+}

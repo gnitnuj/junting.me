@@ -1,0 +1,26 @@
+[
+  {
+    "date": "2026-09-26",
+    "macrostructure": "Index-First",
+    "theme": "whimsical stationery",
+    "scope": "surface only",
+    "enrichment": "existing portrait and thumbnails",
+    "brief": "Preserve the user-approved compact Linktree layout; handwritten name, pastel notes, green ink, soft irregular corners, and restrained press feedback."
+  },
+  {
+    "date": "2026-09-26",
+    "macrostructure": "Index-First",
+    "theme": "personal link hub",
+    "enrichment": "small portrait and property thumbnails",
+    "brief": "User correction: compact, mobile-first Linktree-style microsite for quick outbound navigation. Keep every destination visible in one column."
+  },
+  {
+    "date": "2026-09-26",
+    "macrostructure": "Index-First",
+    "theme": "Brutal",
+    "enrichment": "existing portrait and property photography",
+    "nav": "compact social links",
+    "footer": "Ft2",
+    "brief": "Playful, expressive personal link hub with bold typography and an asymmetric property gallery."
+  }
+]

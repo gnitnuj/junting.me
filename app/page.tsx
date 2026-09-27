@@ -15,28 +15,27 @@ export default function Home() {
     <main className="site-shell">
       <div className="page-content">
         <header className="intro">
-          <p className="intro-kicker">HELLO, I&apos;M</p>
           <div className="relative avatar">
-            <Image src="/JunFabio.jpg" alt="Portrait of Junting" fill className="object-cover" priority />
+            <Image src="/JunFabio.jpg" alt="Portrait of Junting" fill sizes="64px" className="object-cover" priority />
           </div>
           <h1>Junting Lu</h1>
-          <p className="intro-copy">Building thoughtful things across engineering, management, and real estate.</p>
+          <p className="intro-copy">Engineering, management &amp; real estate.</p>
         </header>
 
         <nav className="socials" aria-label="Social links">
-          <SocialIcon href="https://github.com/gnitnuj" icon={<Github size={20} />} />
-          <SocialIcon href="https://linkedin.com/in/junting" icon={<Linkedin size={20} />} />
-          <SocialIcon href="mailto:junting.lu@gmail.com" icon={<Mail size={20} />} />
-          <SocialIcon href="https://instagram.com/whatsajunting" icon={<Instagram size={20} />} />
+          <SocialIcon label="GitHub" href="https://github.com/gnitnuj" icon={<Github size={20} />} />
+          <SocialIcon label="LinkedIn" href="https://linkedin.com/in/junting" icon={<Linkedin size={20} />} />
+          <SocialIcon label="Email Junting" href="mailto:junting.lu@gmail.com" icon={<Mail size={20} />} />
+          <SocialIcon label="Instagram" href="https://instagram.com/whatsajunting" icon={<Instagram size={20} />} />
         </nav>
 
-        <section className="link-section" aria-label="Get in touch">
-          <LinkCard eyebrow="A LITTLE MORE" title="About me" description="What&apos;s a Junting?" href="https://whatsajunt.ing/about" />
-          <LinkCard eyebrow="LET&apos;S CONNECT" title="Book a chat" description="Get on my calendar" href="https://calendar.app.google/enxs2Q7YpHACnBBAA" />
+        <section className="link-section" aria-label="Personal links">
+          <LinkCard title="About me" description="whatsajunt.ing" href="https://whatsajunt.ing/about" />
+          <LinkCard title="Book a chat" description="Get on my calendar" href="https://calendar.app.google/enxs2Q7YpHACnBBAA" />
         </section>
 
         <PropertyCarousel properties={properties} />
-        <footer>Made with curiosity · Seattle, WA</footer>
+        <footer>Seattle, WA</footer>
       </div>
     </main>
   );
