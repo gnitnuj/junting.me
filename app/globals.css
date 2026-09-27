@@ -277,3 +277,41 @@ footer {
   border: var(--rule-thin) solid currentColor;
   border-radius: 50%;
 }
+
+/* Hallmark · audit follow-up: consistent color roles and text-size-safe cards.
+ * Pre-emit critique: P5 H5 E5 S5 R5 V4. */
+.social-icon:nth-child(n) { background: var(--surface); }
+.social-icon:hover, .social-icon:active { background: var(--color-hover); }
+.link-card {
+  --note-face: var(--color-surface);
+  --note-ink: var(--accent);
+  --shadow-note: var(--shadow-note-cream);
+}
+.link-card:nth-child(2) { --shadow-note: var(--shadow-note-butter); }
+.professional-card { --shadow-note: var(--shadow-note-lilac); }
+.professional-card--sage { --shadow-note: var(--shadow-note-sage); }
+
+/* Allow larger text to reflow instead of expanding the grid offscreen. */
+.link-section, .professional-list { grid-template-columns: minmax(0, 1fr); }
+.link-card, .professional-card { min-width: 0; }
+.link-card h2, .site-copy h3 { white-space: normal; }
+.card-description, .site-copy p { overflow-wrap: anywhere; }
+.professional-list { container-type: inline-size; }
+@container (max-width: 16rem) {
+  .professional-card { padding-inline: var(--space-sm); }
+  .professional-card .site-icon { display: none; }
+}
+
+.professional-card .card-arrow {
+  transition: transform var(--dur-short) var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .professional-card:hover .card-arrow { transform: translate(2px, -2px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .professional-card .card-arrow,
+  .professional-card:hover .card-arrow {
+    transition: none;
+    transform: none;
+  }
+}

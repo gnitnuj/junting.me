@@ -12,6 +12,10 @@
   --color-lilac: oklch(94% 0.035 305);
   --color-lilac-ink: oklch(38% 0.085 305);
   --color-sticker-edge: oklch(80% 0.04 155);
+  --color-cream-edge: oklch(85% 0.025 85);
+  --color-butter-edge: oklch(82% 0.07 95);
+  --color-lilac-edge: oklch(82% 0.035 305);
+  --color-sage-edge: oklch(80% 0.04 150);
   --color-accent-ink: var(--color-paper);
   --color-focus: var(--color-accent);
   --font-display: var(--font-shantell), sans-serif;
@@ -35,6 +39,10 @@
   --radius-note-alt: 22px 16px 20px 18px;
   --radius-portrait: 44% 56% 48% 52% / 50% 44% 56% 50%;
   --shadow-note: 0 3px 0 var(--color-sticker-edge);
+  --shadow-note-cream: 0 3px 0 var(--color-cream-edge);
+  --shadow-note-butter: 0 3px 0 var(--color-butter-edge);
+  --shadow-note-lilac: 0 3px 0 var(--color-lilac-edge);
+  --shadow-note-sage: 0 3px 0 var(--color-sage-edge);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --dur-short: 150ms;
 
