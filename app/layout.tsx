@@ -7,8 +7,8 @@ const display = Shantell_Sans({ subsets: ["latin"], variable: "--font-shantell" 
 const body = Geist({ subsets: ["latin"], variable: "--font-geist" });
 
 export const metadata: Metadata = {
-  title: "Junting Lu — Code, keys, and curiosity",
-  description: "Links to Junting Lu's work, socials, and calendar.",
+  title: "Junting — What’s a Junting?",
+  description: "Links to Junting's work, socials, and calendar.",
 };
 
 export default function RootLayout({

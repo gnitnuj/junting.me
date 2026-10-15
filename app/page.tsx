@@ -12,8 +12,8 @@ export default function Home() {
           <div className="relative avatar">
             <Image src="/JunFabio.jpg" alt="Portrait of Junting" fill sizes="64px" className="object-cover" priority />
           </div>
-          <h1>Junting Lu</h1>
-          <p className="intro-copy">Code, keys, and curiosity.</p>
+          <h1>Junting</h1>
+          <p className="intro-copy">What’s a Junting? Good question.</p>
         </header>
 
         <nav className="socials" aria-label="Social links">

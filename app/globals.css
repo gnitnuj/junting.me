@@ -119,6 +119,23 @@ h1, h2 {
   --note-edge: var(--color-sage-edge);
   border-radius: var(--radius-note-alt);
 }
+/* On load, cards settle onto the page one after another like notes laid on a desk.
+ * `backwards` fill releases transform afterwards so press feedback still works. */
+@keyframes note-settle {
+  from {
+    opacity: 0;
+    transform: translateY(calc(-1 * var(--settle-lift))) rotate(var(--settle-tilt));
+  }
+}
+.link-card, .professional-card {
+  --settle-tilt: -1.5deg;
+  animation: note-settle var(--dur-settle) var(--ease-out)
+    calc(var(--settle-order, 0) * var(--settle-stagger)) backwards;
+}
+.link-card:nth-child(2) { --settle-order: 1; --settle-tilt: 1.2deg; }
+.professional-card:nth-child(1) { --settle-order: 2; }
+.professional-card:nth-child(2) { --settle-order: 3; --settle-tilt: 1.2deg; }
+
 /* Pressing sinks the card into its edge, so the bottom stays put. */
 .link-card:active, .professional-card:active {
   box-shadow: 0 var(--note-lift-pressed) 0 var(--note-edge);
@@ -192,6 +209,7 @@ footer {
 /* Reduced motion: keep color fades and the flattened press edge, drop movement. */
 @media (prefers-reduced-motion: reduce) {
   .link-card, .professional-card {
+    animation: none;
     transition: background-color var(--dur-short) var(--ease-out),
       border-color var(--dur-short) var(--ease-out);
   }

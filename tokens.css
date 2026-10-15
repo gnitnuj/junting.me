@@ -41,6 +41,9 @@
   --note-press: 2px;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --dur-short: 150ms;
+  --dur-settle: 200ms;
+  --settle-stagger: 35ms;
+  --settle-lift: 6px;
 
   /* Preserve the existing components' palette names. */
   --paper: var(--color-paper);
