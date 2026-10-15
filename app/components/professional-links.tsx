@@ -39,9 +39,9 @@ export default function ProfessionalLinks() {
             <span className={`site-icon site-icon--${tone}`} aria-hidden="true">
               {icon}
             </span>
-            <div className="site-copy">
-              <h3>{title}</h3>
-              <p>{domain}</p>
+            <div className="card-copy">
+              <p className="card-title">{title}</p>
+              <p className="card-description">{domain}</p>
             </div>
             <ArrowUpRight className="card-arrow" size={18} aria-hidden="true" />
           </Link>

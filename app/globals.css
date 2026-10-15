@@ -1,317 +1,203 @@
-/* Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V4 */
+/* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V4 */
 /* Hallmark · macrostructure: Index-First · scope: mobile-first personal link hub
- * compact profile, full-width destination links, thumbnail property links */
+ * compact profile, socials, full-width pastel note links · whimsical stationery */
 @import "tailwindcss";
 @import "../tokens.css";
-* { box-sizing:border-box; } html, body { margin:0; background:var(--paper); } body { color:var(--ink); font-family:var(--font-body); } a { color:inherit; }
-.site-shell { min-height:100svh; padding:32px 20px; background:var(--paper); }.page-content { width:min(100%,620px); margin:0 auto; }.intro { text-align:center; }.avatar { width:104px;height:104px;overflow:hidden;margin:0 auto 16px;border:1px solid var(--ink);border-radius:50%;box-shadow:6px 6px 0 var(--accent-pale); }h1,h2,h3,p { margin-top:0; }h1,h2,h3 { font-family:var(--font-display);font-weight:500; }h1 { margin-bottom:10px;font-size:clamp(2.55rem,10vw,4rem);letter-spacing:-.055em;line-height:.95; }.intro-copy { max-width:385px;margin:0 auto;color:var(--muted);font-size:1rem;line-height:1.55; }.socials { display:flex;justify-content:center;gap:8px;margin:20px 0 24px; }.social-icon { display:grid;width:44px;height:44px;place-items:center;border:1px solid var(--line);border-radius:50%;background:var(--surface); }.social-icon:hover { border-color:var(--accent); }.link-section { display:grid;gap:12px; }.link-card { display:flex;align-items:center;justify-content:space-between;min-height:88px;padding:16px 20px;border:1px solid var(--line);background:var(--surface);text-decoration:none; }.link-card:hover { border-color:var(--accent); }.link-card h2 { margin:0 0 4px;font-size:1.4rem; }.card-description { margin:0;color:var(--muted);font-size:.9rem; }.card-arrow { color:var(--accent); }.stays { margin-top:36px; }.section-heading { display:flex;justify-content:space-between;align-items:end;padding-bottom:15px;border-bottom:1px solid var(--line); }.section-heading h2 { margin:0;font-size:2rem;letter-spacing:-.04em; }.section-heading>span { color:var(--muted);font-size:.75rem; }.property-rail { display:grid;grid-auto-flow:column;grid-auto-columns:minmax(235px,78%);gap:14px;overflow-x:auto;padding:18px 2px 9px;scrollbar-width:thin;scroll-snap-type:x mandatory; }.property-card { overflow:hidden;border:1px solid var(--line);background:var(--surface-raised);text-decoration:none;scroll-snap-align:start; }.property-card:hover { border-color:var(--accent); }.property-image { height:200px;overflow:hidden; }.property-copy { padding:14px 15px 16px; }.property-copy p { margin-bottom:6px;color:var(--muted);font-size:.72rem; }.property-copy div { display:flex;align-items:center;justify-content:space-between;gap:12px; }.property-copy h3 { margin:0;font-size:1.05rem; }footer { margin-top:36px;color:var(--muted);font-size:.72rem;letter-spacing:.05em;text-align:center; }@media (min-width:640px) { .site-shell { padding-top:48px; }.property-rail { grid-auto-columns:minmax(250px,52%); } }
 
-/* Hallmark audit fixes: explicit keyboard states and no spatial motion. */
-html, body { overflow-x: clip; }
-.social-icon:focus-visible,
-.link-card:focus-visible,
-.property-card:focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 2px;
-}
-.social-icon:active,
-.link-card:active,
-.property-card:active { background: var(--accent-pale); }
-.property-rail { padding-inline: 4px; }
-@media (prefers-reduced-motion: reduce) {
-  .social-icon, .link-card, .card-arrow, .property-card, .property-image img {
-    animation: none;
-    transition: none;
-    transform: none;
-  }
+* { box-sizing: border-box; }
+html, body { margin: 0; overflow-x: clip; background: var(--paper); }
+body { color: var(--ink); font-family: var(--font-body); }
+a { color: inherit; }
+h1, h2, p { margin-top: 0; }
+h1, h2 {
+  min-width: 0;
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 600;
+  overflow-wrap: anywhere;
 }
 
-/* Mobile-first microsite: every destination is a visible, full-width link. */
-.site-shell { padding: var(--space-lg) var(--space-md); }
-.page-content { width: min(100%, 440px); }
-.intro { display: block; text-align: center; }
+/* Page frame: top-aligned on phones, centered on wider screens. */
+.site-shell { min-height: 100svh; padding: var(--space-lg) var(--space-md); background: var(--paper); }
+.page-content { width: min(100%, 440px); margin: 0 auto; }
+@media (min-width: 640px) {
+  .site-shell { display: grid; align-content: center; }
+}
+
+/* Profile */
+.intro { text-align: center; }
 .avatar {
   width: 64px;
   height: 64px;
+  overflow: hidden;
   margin: 0 auto var(--space-sm);
-  border: var(--rule-thin) solid var(--line);
-  border-radius: 50%;
-  box-shadow: none;
+  border: var(--rule-heavy) solid var(--accent);
+  border-radius: var(--radius-portrait);
+  box-shadow: 3px 3px 0 var(--color-butter);
 }
-h1, h2, h3 { font-style: normal; min-width: 0; overflow-wrap: anywhere; }
 .intro h1 {
   margin: 0 0 var(--space-xs);
   font-size: var(--text-display);
-  font-weight: 700;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.04em;
   line-height: 1.2;
 }
 .intro-copy {
-  margin: 0 auto;
   max-width: 38ch;
+  margin: 0 auto;
+  color: var(--muted);
   font-size: var(--text-small);
   line-height: 1.5;
 }
+
+/* Social icons */
 .socials {
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-sm);
   margin: var(--space-sm) 0 var(--space-md);
 }
 .social-icon {
-  background: var(--paper);
-  border-color: var(--line);
-  border-radius: 50%;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: var(--rule-thin) solid var(--line);
+  border-radius: 45% 52% 46% 50%;
+  background: var(--surface);
+  transition: background-color var(--dur-short) var(--ease-out),
+    border-color var(--dur-short) var(--ease-out);
 }
-.link-section { gap: var(--space-sm); border: 0; }
-.link-card, .property-card {
+.social-icon:nth-child(even) { border-radius: 52% 44% 50% 46%; }
+.social-icon:hover, .social-icon:active { background: var(--color-hover); }
+
+/* Sections */
+.link-section, .professional-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-sm); }
+.professional-links { margin-top: var(--space-lg); }
+.professional-list { container-type: inline-size; }
+.section-heading { padding: 0 var(--space-xs) var(--space-sm); }
+.section-heading h2 {
+  margin: 0;
+  font-size: var(--text-link);
+  line-height: 1.4;
+}
+
+/* Pastel note cards: each card sets its face, ink and edge colors. */
+.link-card, .professional-card {
+  --note-face: var(--color-surface);
+  --note-ink: var(--accent);
+  --note-edge: var(--color-cream-edge);
   display: flex;
   align-items: center;
   gap: var(--space-sm);
+  min-width: 0;
   min-height: 68px;
   padding: var(--space-sm) var(--space-md);
   border: var(--rule-thin) solid var(--line);
-  border-radius: 12px;
-  background: var(--surface);
-  text-decoration: none;
-}
-.link-card > div, .property-copy { min-width: 0; flex: 1; }
-.link-card h2, .property-copy h3 {
-  margin: 0 0 var(--space-xs);
-  font-family: var(--font-body);
-  font-size: var(--text-link);
-  font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: -0.015em;
-  white-space: nowrap;
-}
-.card-description, .property-copy p {
-  margin: 0;
-  color: var(--muted);
-  font-size: var(--text-small);
-  line-height: 1.35;
-}
-.card-arrow { flex: 0 0 auto; color: var(--accent); }
-.link-card:hover, .property-card:hover {
-  border-color: var(--line);
-  background: var(--color-hover);
-}
-.link-card:active, .property-card:active { background: var(--accent-pale); }
-.stays { margin-top: var(--space-lg); }
-.section-heading {
-  display: block;
-  padding: 0 var(--space-xs) var(--space-sm);
-  border: 0;
-}
-.section-heading h2 {
-  margin: 0;
-  font-family: var(--font-body);
-  font-size: var(--text-section);
-  font-weight: 600;
-  letter-spacing: 0;
-  line-height: 1.4;
-}
-.property-rail {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  grid-auto-flow: row;
-  grid-auto-columns: auto;
-  gap: var(--space-sm);
-  overflow: visible;
-  padding: 0;
-  margin: 0;
-  scroll-snap-type: none;
-}
-.property-card { min-width: 0; overflow: visible; }
-.property-image {
-  width: 44px;
-  height: 44px;
-  flex: 0 0 44px;
-  border-radius: var(--radius-photo);
-  overflow: hidden;
-}
-.property-copy { padding: 0; }
-.property-copy h3 { font-size: var(--text-section); }
-footer {
-  display: block;
-  margin-top: var(--space-lg);
-  padding: 0;
-  border: 0;
-  font-size: var(--text-small);
-  letter-spacing: 0;
-  text-align: center;
-}
-
-/* Hallmark · whimsical surface pass; preserve the approved link-hub geometry. */
-.intro h1 {
-  font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.04em;
-}
-.avatar {
-  border: var(--rule-heavy) solid var(--accent);
-  border-radius: var(--radius-portrait);
-  box-shadow: 3px 3px 0 var(--color-butter);
-}
-.social-icon {
-  border-radius: 45% 52% 46% 50%;
-  border-color: var(--line);
-  background: var(--surface);
-}
-.social-icon:nth-child(even) { border-radius: 52% 44% 50% 46%; }
-.social-icon:nth-child(2) { background: var(--accent-pale); }
-.social-icon:nth-child(3) { background: var(--color-butter); }
-.social-icon:hover { border-color: var(--line); background: var(--color-hover); }
-.link-card {
-  --note-face: var(--color-lilac);
-  --note-ink: var(--color-lilac-ink);
-  background: var(--note-face);
   border-radius: var(--radius-note);
-  box-shadow: var(--shadow-note);
+  background: var(--note-face);
+  box-shadow: 0 var(--note-lift) 0 var(--note-edge);
+  text-decoration: none;
+  transition: transform var(--dur-short) var(--ease-out),
+    box-shadow var(--dur-short) var(--ease-out),
+    background-color var(--dur-short) var(--ease-out),
+    border-color var(--dur-short) var(--ease-out);
 }
 .link-card:nth-child(2) {
   --note-face: var(--color-butter);
-  --note-ink: var(--accent);
+  --note-edge: var(--color-butter-edge);
   border-radius: var(--radius-note-alt);
 }
-.link-card .card-arrow {
-  box-sizing: content-box;
-  padding: var(--space-xs);
-  color: var(--note-ink);
-  border: var(--rule-thin) solid currentColor;
-  border-radius: 50%;
-}
-.link-card:hover, .link-card:active { background: var(--note-face); }
-.section-heading h2 {
-  font-family: var(--font-display);
-  font-weight: 600;
-}
-.property-card { border-radius: var(--radius-note-alt); }
-.property-image { border-radius: 10px 8px 12px 8px; }
-.link-card, .property-card {
-  transition: transform var(--dur-short) var(--ease-out);
-}
-.link-card:active, .property-card:active { transform: translateY(2px); }
-.link-card .card-arrow {
-  transition: transform var(--dur-short) var(--ease-out);
-}
-@media (hover: hover) and (pointer: fine) {
-  .link-card:hover .card-arrow { transform: translate(2px, -2px); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .link-card, .property-card, .link-card .card-arrow,
-  .link-card:active, .property-card:active, .link-card:hover .card-arrow {
-    transition: none;
-    transform: none;
-  }
-}
-
-/* Professional destinations keep the same compact tap-target rhythm. */
-.professional-links { margin-top: var(--space-lg); }
-.professional-list { display: grid; gap: var(--space-sm); }
-.professional-card {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  min-height: 68px;
-  padding: var(--space-sm) var(--space-md);
-  border: var(--rule-thin) solid var(--line);
-  border-radius: var(--radius-note-alt);
-  background: var(--surface);
-  text-decoration: none;
-  transition: transform var(--dur-short) var(--ease-out);
-}
-.site-icon {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  flex: 0 0 44px;
-  border-radius: var(--radius-note);
-}
-.site-icon--sage { background: var(--accent-pale); color: var(--accent); }
-.site-icon--lilac { background: var(--color-lilac); color: var(--color-lilac-ink); }
-.site-copy { min-width: 0; flex: 1; }
-.site-copy h3 {
-  margin: 0 0 var(--space-xs);
-  font-family: var(--font-body);
-  font-size: var(--text-section);
-  font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: -0.015em;
-  white-space: nowrap;
-}
-.site-copy p {
-  margin: 0;
-  color: var(--muted);
-  font-size: var(--text-small);
-  line-height: 1.35;
-}
-.professional-card:hover { background: var(--color-hover); }
-.professional-card:active { background: var(--accent-pale); transform: translateY(2px); }
-.professional-card:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
-@media (prefers-reduced-motion: reduce) {
-  .professional-card, .professional-card:active { transition: none; transform: none; }
-}
-
-/* Give each destination the same pastel note treatment. */
 .professional-card {
   --note-face: var(--color-lilac);
   --note-ink: var(--color-lilac-ink);
-  background: var(--note-face);
-  border-radius: var(--radius-note);
-  box-shadow: var(--shadow-note);
+  --note-edge: var(--color-lilac-edge);
 }
 .professional-card--sage {
   --note-face: var(--accent-pale);
   --note-ink: var(--accent);
+  --note-edge: var(--color-sage-edge);
   border-radius: var(--radius-note-alt);
 }
-.professional-card:hover, .professional-card:active { background: var(--note-face); }
-.professional-card .site-icon { background: var(--surface); }
-.professional-card .site-copy h3 { font-size: var(--text-link); }
-.professional-card .card-arrow {
+/* Pressing sinks the card into its edge, so the bottom stays put. */
+.link-card:active, .professional-card:active {
+  box-shadow: 0 var(--note-lift-pressed) 0 var(--note-edge);
+  transform: translateY(var(--note-press));
+}
+
+.site-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  place-items: center;
+  border-radius: var(--radius-note);
+  background: var(--surface);
+}
+.site-icon--sage { color: var(--accent); }
+.site-icon--lilac { color: var(--color-lilac-ink); }
+
+.card-copy { min-width: 0; flex: 1; }
+.card-title {
+  margin: 0 0 var(--space-xs);
+  font-size: var(--text-link);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+.card-description {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--text-small);
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.card-arrow {
   box-sizing: content-box;
+  flex: 0 0 auto;
   padding: var(--space-xs);
-  color: var(--note-ink);
   border: var(--rule-thin) solid currentColor;
   border-radius: 50%;
+  color: var(--note-ink);
+  transition: transform var(--dur-short) var(--ease-out);
 }
-
-/* Hallmark · audit follow-up: consistent color roles and text-size-safe cards.
- * Pre-emit critique: P5 H5 E5 S5 R5 V4. */
-.social-icon:nth-child(n) { background: var(--surface); }
-.social-icon:hover, .social-icon:active { background: var(--color-hover); }
-.link-card {
-  --note-face: var(--color-surface);
-  --note-ink: var(--accent);
-  --shadow-note: var(--shadow-note-cream);
+.link-card:focus-visible .card-arrow,
+.professional-card:focus-visible .card-arrow { transform: translate(2px, -2px); }
+@media (hover: hover) and (pointer: fine) {
+  .link-card:hover .card-arrow,
+  .professional-card:hover .card-arrow { transform: translate(2px, -2px); }
 }
-.link-card:nth-child(2) { --shadow-note: var(--shadow-note-butter); }
-.professional-card { --shadow-note: var(--shadow-note-lilac); }
-.professional-card--sage { --shadow-note: var(--shadow-note-sage); }
 
 /* Allow larger text to reflow instead of expanding the grid offscreen. */
-.link-section, .professional-list { grid-template-columns: minmax(0, 1fr); }
-.link-card, .professional-card { min-width: 0; }
-.link-card h2, .site-copy h3 { white-space: normal; }
-.card-description, .site-copy p { overflow-wrap: anywhere; }
-.professional-list { container-type: inline-size; }
 @container (max-width: 16rem) {
   .professional-card { padding-inline: var(--space-sm); }
   .professional-card .site-icon { display: none; }
 }
 
-.professional-card .card-arrow {
-  transition: transform var(--dur-short) var(--ease-out);
+footer {
+  margin-top: var(--space-lg);
+  color: var(--muted);
+  font-size: var(--text-small);
+  text-align: center;
 }
-@media (hover: hover) and (pointer: fine) {
-  .professional-card:hover .card-arrow { transform: translate(2px, -2px); }
+
+/* Keyboard focus shows instantly. */
+.social-icon:focus-visible,
+.link-card:focus-visible,
+.professional-card:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
 }
+
+/* Reduced motion: keep color fades and the flattened press edge, drop movement. */
 @media (prefers-reduced-motion: reduce) {
-  .professional-card .card-arrow,
-  .professional-card:hover .card-arrow {
-    transition: none;
-    transform: none;
+  .link-card, .professional-card {
+    transition: background-color var(--dur-short) var(--ease-out),
+      border-color var(--dur-short) var(--ease-out);
   }
+  .card-arrow { transition: none; }
+  .link-card:active, .professional-card:active,
+  .link-card:hover .card-arrow, .professional-card:hover .card-arrow,
+  .link-card:focus-visible .card-arrow,
+  .professional-card:focus-visible .card-arrow { transform: none; }
 }
